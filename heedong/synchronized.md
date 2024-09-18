@@ -105,7 +105,7 @@ class Counter {
 
 그 외에 `synchronized`의 문제는 아니지만, Spring에서 DB와 함께 `@Transactional`와 함께 사용했을 때 원하는 결과를 얻지 못할 수 있음 (서버가 1개인 경우에도)
 - e.g. decrease 로직(특정 값 DB 조회 -> 차감 -> DB 저장)이 있고, `synchronized` 키워드를 통해 decrease 메서드의 동시 접근을 제한하는 경우
-  ```java
+  ```kotlin
   public class TicketService {
 
     private final TicketRepository ticketRepository;
@@ -122,7 +122,7 @@ class Counter {
     }
   }
   ```
-  - decrement 로직 자체는 동시 접근을 제어하지만, 실제 DB 반영(커밋) 전에 다른 스레드에서 호출이 가능 (caused by AOP 구현 방법)
+  - decrease 로직 자체는 동시 접근을 제어하지만, 실제 DB 반영(커밋) 전에 다른 스레드에서 호출이 가능 (caused by AOP 구현 방법)
 
 ### 그러면?
 `synchronized` 의 가장 치명적인 단점은 락을 얻기 위해 `BLOCKED` 상태가 되면 락을 얻을 때까지 무한 대기

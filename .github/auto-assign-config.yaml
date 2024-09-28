@@ -1,0 +1,13 @@
+addReviewers: false
+
+addAssignees: author
+
+reviewers:
+  - ruthetum
+
+numberOfReviewers: 1
+
+numberOfAssignees: 1
+
+skipKeywords:
+  - wip

@@ -1,0 +1,21 @@
+name: apply labels
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  apply-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: add labels
+        id: labeler
+        uses: jimschubert/labeler-action@v2
+        with:
+          GITHUB_TOKEN: ${{secrets.ORG_GITHUB_TOKEN}}

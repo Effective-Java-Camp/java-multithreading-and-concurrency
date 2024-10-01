@@ -1,0 +1,20 @@
+enable:
+  issues: true
+  prs: true
+
+labels:
+  'Week 1':
+    include:
+      - '\bweek1\b'
+  'Week 2':
+    include:
+      - '\bweek2\b'
+  'Week 3':
+    include:
+      - '\bweek3\b'
+  'Week 4':
+    include:
+      - '\bweek4\b'
+  'Week 5':
+    include:
+      - '\bweek5\b'
